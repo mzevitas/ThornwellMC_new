@@ -1,0 +1,83 @@
+<header>
+    <div class="headerLogo">
+        <a href="/">
+            <img src="images/straight-logo.png" alt="Thornwell Maintenance Company">
+        </a>
+    </div>
+</header>
+<div class="nav">
+    <div class="navDesktop">
+        <ul>
+            <a href="#!/">
+                <li>Home</li>
+            </a>
+            <a href="#!/why-tmc">
+                <li>Why TMC</li>
+            </a>
+            <a href="#!/our-services">
+                <li>Services</li>
+            </a>
+            <a href="#!/about-us">
+                <li>About TMC</li>
+            </a>
+            <a href="#!/contact-us">
+                <li>Contact Us</li>
+            </a>
+        </ul>
+    </div>
+    </div>
+    <div class="button_container" id="toggle">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li>
+                    <a href="#!/">
+                    Home
+                </a>
+                </li>
+                <li>
+                    <a href="#!/why-tmc">
+                   Why TMC
+                </a>
+                </li>
+                <li>
+                    <a href="#!/our-services">
+                    Services
+                </a>
+                </li>
+                <li>
+                    <a href="#!/about-us">
+                    About TMC
+                </a>
+                </li>
+                <li>
+                    <a href="#!/contact-us">
+                    Contact Us
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<script>
+$(document).ready(function() {
+    // Navigation open and close
+    $('#toggle, nav a').click(function() {
+        $('#toggle, nav a').toggleClass('active');
+        $('#overlay').toggleClass('open');
+    });
+
+    // Back to top button
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 2200);
+        return false;
+    });
+
+});
+</script>

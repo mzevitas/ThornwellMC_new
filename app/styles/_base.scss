@@ -1,0 +1,31 @@
+.wrapper {
+    margin: 40px auto;
+    max-width: 960px;
+    width: 95%;
+
+    h5 a {
+        color: hsla(359, 100%, 21%, 1);
+
+        &:hover {
+            text-decoration: none;
+            margin-left: -5px;
+        }
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: hsla(359, 100%, 21%, 0.7);
+    background-color: hsla(359, 100%, 21%, 0.7);
+}
+
+   h1 {
+ 
+        color: #6d0001;
+  
+    }
+
+    .banners {
+        width: 100%;
+    }

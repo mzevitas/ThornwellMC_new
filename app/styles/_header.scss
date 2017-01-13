@@ -1,0 +1,227 @@
+header {
+    width: 100%;
+    background-color: #f5f6eb;
+    border-bottom: 3px solid #6d0001;
+    .headerLogo {
+        margin: 0 auto;
+        max-width: 960px;
+        width: 100%;
+        a {
+            img {
+                max-width: 650px;
+                // width: 80%;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+        }
+    }
+}
+
+.nav {
+    width: 100% !important;
+    background-color: #6d0001;
+}
+
+.navDesktop {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+    a {
+        padding-right: 100px;
+        color: white;
+        font-size: 1.3em;
+        vertical-align: middle;
+        &:hover {
+            text-decoration:none;
+            color: #f5f6eb;
+       
+
+
+        }
+        &:focus {
+            text-decoration: none;
+            color: #e6ddbc;
+        }
+    }
+   
+    li {
+        display: inline;
+        text-decoration: none;
+        vertical-align: -webkit-baseline-middle;
+    }
+    ul {
+padding-left: 0;
+    }
+}
+
+.button_container {
+    position: absolute;
+    display: none;
+    top:20px;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
+    &:hover {
+        opacity: .7;
+    }
+    &.active {
+        .top {
+            transform: translateY(11px) translateX(0) rotate(45deg);
+            background: #fff;
+        }
+        .middle {
+            opacity: 0;
+            background: #fff;
+        }
+        .bottom {
+            transform: translateY(-11px) translateX(0) rotate(-45deg);
+            background: #fff;
+        }
+    }
+    span {
+        background: #6d0001;
+        border: none;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s ease;
+        cursor: pointer;
+        &:nth-of-type(2) {
+            top: 11px;
+        }
+        &:nth-of-type(3) {
+            top: 22px;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1 !important;
+    background: #6d0001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .45s, visibility .65s, height .65s;
+    overflow: scroll;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+        // transition:ease 1s;
+        li {
+            animation: fadeInRight .5s ease forwards;
+            animation-delay: .35s;
+            &:nth-of-type(2) {
+                animation-delay: .4s;
+            }
+            &:nth-of-type(3) {
+                animation-delay: .45s;
+            }
+            &:nth-of-type(4) {
+                animation-delay: .50s;
+            }
+        }
+    }
+    nav {
+        position: relative;
+        height: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 65px;
+        font-weight: 400;
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+        // height: 100%; 
+        cursor: pointer;
+        li {
+            display: block;
+            height: 25%;
+            height: calc(100% / 4);
+            min-height: 50px;
+            position: relative;
+            opacity: 0;
+            width: 100%;
+            cursor: pointer;
+            a {
+                display: block;
+                width: 100%;
+                position: relative;
+                color: white;
+                text-decoration: none;
+                overflow: hidden;
+                cursor: pointer;
+                &:hover {
+                    background-color: #ffffff;
+                    color: #6d0001;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .headerLogo a {
+        img {
+            padding-left: 10px;
+            width: 450px
+        }
+    }
+    .nav {
+        display: none;
+    }
+    .button_container {
+        display: block;
+    }
+}
+@media screen and (max-width: 500px) {
+    .headerLogo a {
+        img {
+            padding-left: 10px;
+            width: 300px
+        }
+    }
+    .overlay nav {
+        top: 39%;
+        font-size: 50px;
+    }
+  
+}
+@media screen and (max-width: 320px) {
+    .headerLogo a {
+        img {
+            padding-left: 10px;
+            width: 250px
+        }
+    }
+    .overlay nav {
+        font-size: 43px;
+    }
+  
+}
